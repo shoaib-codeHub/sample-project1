@@ -5,7 +5,7 @@
 }
 
 header{
-   background-color: #ffffff; 
+   background-color: hsl(195, 32%, 74%); 
 }
 
 li{
@@ -13,7 +13,7 @@ li{
 }
 
 a{
-    color: rgba(128, 128, 128, 0.79);
+    color: rgb(126, 65, 157);
     text-decoration: none;
 }
 
@@ -27,6 +27,10 @@ a{
 
 .navbar .nav-branding{
     margin: 0px 40px 0px 40px;
+}
+
+.nav-branding span{
+    color: rgb(52, 46, 228);
 }
 
 .nav-menu{
@@ -61,7 +65,7 @@ a{
     margin: 5px auto;
     -webkit-transition: all  0.3s ease-in-out;
     transition: all  0.3s ease-in-out;
-    background-color: rgb(193, 33, 33);
+    background-color: rgb(12, 0, 79);
 }
 
 @media(max-width:768px) {
@@ -87,7 +91,7 @@ a{
         top: 70px;
         gap: 0;
         flex-direction: column;
-        background-color: #ffffff;
+        background-color: hsl(195, 32%, 74%);
         width: 100%;
         text-align: center;
         transition: 0.3s;
