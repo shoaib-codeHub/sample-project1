@@ -6,8 +6,9 @@
 
 header {
     background-color: #b2a496;
-    position: relative;
-    z-index: 1;
+    position:sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 li {
@@ -20,13 +21,24 @@ a {
 }
 
 .navbar {
+    width: 100%;
     min-height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 24px;
-    position: relative;
-    background-color: #9d8977;
+    background-color: transparent; /* Starts transparent */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: #9d8977; /* Change this to the background you want */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adds shadow */
+}
+
+/* Content spacing below the navbar to prevent jumping */
+.navbar + * {
+    margin-top: 70px;
 }
 
 .navbar .nav-branding {
@@ -209,7 +221,7 @@ a {
 
 .home {
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -233,7 +245,7 @@ a {
 /* Text container */
 .home-backgroun-heading {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -241,21 +253,41 @@ a {
 }
 
 .home-backgroun-heading h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 1.2;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.home-backgroun-heading h3 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
     .home-backgroun-heading h1 {
-        font-size: 2.5rem;
+        font-size: 1.3rem;
     }
 }
 
 @media (max-width: 480px) {
     .home-backgroun-heading h1 {
-        font-size: 2rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-backgroun-heading h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-backgroun-heading h3 {
+        font-size: 0.6rem;
     }
 }
