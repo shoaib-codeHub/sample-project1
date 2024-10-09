@@ -1,17 +1,19 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
+/* Header */
 header {
     background-color: #b2a496;
-    position:sticky;
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
 
+/* List Style */
 li {
     list-style: none;
 }
@@ -21,6 +23,7 @@ a {
     text-decoration: none;
 }
 
+/* Navbar */
 .navbar {
     width: 100%;
     min-height: 70px;
@@ -28,22 +31,23 @@ a {
     justify-content: center;
     align-items: center;
     padding: 0 24px;
-    background-color: transparent; /* Starts transparent */
+    background-color: transparent;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar.scrolled {
-    background-color: #9d8977; /* Change this to the background you want */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adds shadow */
+    background-color: #9d8977;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Content spacing below the navbar to prevent jumping */
-.navbar + * {
+/* Space below navbar to prevent content jump */
+.navbar+* {
     margin-top: 70px;
 }
 
-.navbar .nav-branding {
-    margin: 0px 40px 0px 40px;
+/* Branding */
+.nav-branding {
+    margin: 0 40px;
     font-size: 2rem;
     color: #ffffff;
     animation: fadeIn 1s ease-in-out;
@@ -53,15 +57,16 @@ a {
     color: black;
 }
 
+/* Nav Menu */
 .nav-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 60px;
     flex-direction: row;
-    /* Make items in a row on larger screens */
 }
 
+/* Nav Link */
 .nav-link {
     transition: color 0.7s ease, transform 0.3s ease-in-out;
     font-size: 1.2rem;
@@ -70,7 +75,6 @@ a {
     position: relative;
     animation: slideDown 0.8s forwards;
     padding: 8px 0;
-    /* Add padding to ensure enough space for the underline */
 }
 
 .nav-link::before,
@@ -79,46 +83,34 @@ a {
     position: absolute;
     width: 100%;
     height: 2px;
-    /* Adjust the height of the underline */
     background-color: #ffffff;
-    /* Set the color of the underline */
     transition: transform 0.3s ease;
     left: 0;
-    /* Ensure the line spans across the whole width */
 }
 
 .nav-link::before {
     top: 0;
-    /* Position the top line */
     transform: scaleX(0);
-    /* Start with the line hidden */
     transform-origin: left;
 }
 
 .nav-link::after {
     bottom: 0;
-    /* Position the bottom line */
     transform: scaleX(0);
-    /* Start with the line hidden */
     transform-origin: right;
-}
-
-.nav-link:hover::before,
-.nav-link:hover::after {
-    transform: scaleX(1);
-    /* Show the underline on hover */
 }
 
 .nav-link:hover::before {
+    transform: scaleX(1);
     transform-origin: right;
-    /* Animate the top line from right to left */
 }
 
 .nav-link:hover::after {
+    transform: scaleX(1);
     transform-origin: left;
-    /* Animate the bottom line from left to right */
 }
 
+/* Hamburger */
 .hamburger {
     display: none;
     cursor: pointer;
@@ -137,7 +129,7 @@ a {
     background-color: black;
 }
 
-/* Media Queries for screens smaller than 768px */
+/* Media Queries for screens smaller than 945px */
 @media (max-width: 945px) {
     .hamburger {
         display: block;
@@ -149,7 +141,6 @@ a {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        /* Stack items vertically */
         width: 100%;
         text-align: center;
         transition: left 0.3s;
@@ -218,8 +209,7 @@ a {
     }
 }
 
-/* main section */
-
+/* Main Section */
 .home {
     width: 100%;
     height: 150vh;
@@ -244,7 +234,7 @@ a {
 }
 
 /* Text container */
-.home-backgroun-heading {
+.home-background-heading {
     position: absolute;
     top: 30%;
     left: 50%;
@@ -253,66 +243,79 @@ a {
     color: white;
 }
 
-.home-backgroun-heading h1 {
+.home-background-heading h1 {
     font-size: 2.5rem;
     line-height: 1.2;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgb(17, 14, 14);
 }
 
-.home-backgroun-heading h3 {
+.home-background-heading h3 {
     font-size: 1.5rem;
     line-height: 1.2;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     margin-top: 30px;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .home-backgroun-heading h1 {
+    .home-background-heading h1 {
         font-size: 1.3rem;
     }
-}
 
-@media (max-width: 480px) {
-    .home-backgroun-heading h1 {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .home-backgroun-heading h3 {
+    .home-background-heading h3 {
         font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .home-backgroun-heading h3 {
+    .home-background-heading h1 {
+        font-size: 0.8rem;
+    }
+
+    .home-background-heading h3 {
         font-size: 0.6rem;
     }
 }
 
+/* Hero Form */
 .hero-form {
     position: absolute;
     top: 550px;
-    height: 150px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 150px;
-    column-gap: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 924px) {
     .hero-form {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 
+@media (max-width: 372px) {
+    .hero-form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
 
-.single-welcome-hero-form{
+    .single-welcome-hero-form,
+    .search {
+        flex: 1 1 100%;
+        margin-top: 10px;
+    }
+}
+
+.single-welcome-hero-form {
     position: relative;
     height: 70px;
+    margin-left: 10px;
     display: grid;
     grid-template-columns: 100px 1fr 80px;
     background-color: #ffffff;
@@ -326,15 +329,13 @@ a {
     }
 }
 
-
-
-.single-welcome-hero-form h3{
+.single-welcome-hero-form h3 {
     font-family: "Montserrat", sans-serif;
     font-size: 21px;
     font-weight: 350;
 }
 
-.single-welcome-hero-form input{
+.single-welcome-hero-form input {
     border: none;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 470;
@@ -343,32 +344,61 @@ a {
 
 .single-welcome-hero-form input:focus {
     outline: none;
-    border: none;
 }
+
 .hero-search-icon i {
     font-size: 18px;
 }
 
-.search{
+/* Search Button */
+.search {
     height: 70px;
     width: 130px;
-    background-color:#b2a496;
+    margin-left: 10px;
+    background-color: #b2a496;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.search button{
+@media (max-width: 924px) {
+    .search {
+        height: 80px;
+        width: 130px;
+        margin-top: 20px;
+    }
+}
+
+.search button {
     background-color: transparent;
-    outline: none;
     border: none;
     font-size: large;
     font-family: "Montserrat", sans-serif;
     margin-right: 10px;
 }
 
-@media (max-width: 898px) {
-    .hero-form button{
-        display: block;
-    }
+.facilities{
+    display: grid;
+    grid-template-rows: auto;
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    background-color: rgba(95, 158, 160, 0.136);
+    bottom: -180px;
 }
+
+.services{
+    height: 200px;
+    width: 200px;
+    background-color: #fff;
+    font-family: "Montserrat", sans-serif;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+}
+
+.services i{
+    font-size: 3rem;
+}
+
