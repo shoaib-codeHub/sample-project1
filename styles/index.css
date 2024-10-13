@@ -501,6 +501,22 @@ a {
     border: 0.7px solid gray;
 }
 
+@media (max-width: 1130px) {
+    .works-header {
+     position: relative;   
+     top: 400px;
+     display: flex;
+     flex-direction: column;  
+    }
+}
+@media (max-width: 745px) {
+    .works-header {
+     position: relative;   
+     top: 800px;
+     display: flex;
+     flex-direction: column;  
+    }
+}
 .work-icon {
     display: flex;
     justify-content: center;
