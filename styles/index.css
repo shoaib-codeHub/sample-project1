@@ -656,6 +656,9 @@ a {
     width: 90%;
     background-color: rgba(127, 255, 212, 0.358);
     margin: auto;
+    grid-template-columns:  1fr 1fr 1fr;
+    display: grid;
+
 }
 
 .explore-main {
@@ -663,7 +666,6 @@ a {
     width: 400px;
     border: 1px solid rgba(128, 128, 128, 0.378);
     transition: box-shadow 1s ease, transform 1s ease;
-    /* Smooth transition for box-shadow and transform */
 }
 
 .explore-main:hover {
