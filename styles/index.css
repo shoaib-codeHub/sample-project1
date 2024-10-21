@@ -654,18 +654,45 @@ a {
 .explore {
     height: 1300px;
     width: 90%;
-    background-color: rgba(127, 255, 212, 0.358);
     margin: auto;
     grid-template-columns:  1fr 1fr 1fr;
     display: grid;
 
 }
 
+@media (max-width: 1340px) {
+    .explore {
+        margin-top: 150px;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(2, 400px);
+        gap: 140px;
+        grid-auto-rows: minmax(500px, auto);
+    }
+}
+
+@media (max-width: 970px) {
+    .explore {
+        position: relative;
+        top: 1250px;
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+    }
+}
+
 .explore-main {
     height: 600px;
     width: 400px;
+    margin-top: 100px;
     border: 1px solid rgba(128, 128, 128, 0.378);
     transition: box-shadow 1s ease, transform 1s ease;
+}
+
+@media (max-width: 970px) {
+    .explore-main {
+        width: 100%;
+    }
 }
 
 .explore-main:hover {
@@ -738,7 +765,6 @@ a {
 }
 
 .reviews {
-
     font-family: "Montserrat", sans-serif;
     font-size: 13px;
     font-weight: 700;
@@ -779,6 +805,14 @@ a {
  #info{
     margin-top: 20px;
 }
+
+@media (max-width: 970px) {
+    #info {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
 .profile-image {
     height: 50px;
     width: 50px;
@@ -805,6 +839,7 @@ a {
     color: red;
 }
 .div2{
+    height: 100px;
     display: flex;
     flex-direction: row-reverse;
     gap: 20px;
