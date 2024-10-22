@@ -655,9 +655,8 @@ a {
     height: 1300px;
     width: 90%;
     margin: auto;
-    grid-template-columns:  1fr 1fr 1fr;
     display: grid;
-
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 @media (max-width: 1340px) {
@@ -802,7 +801,7 @@ a {
     grid-template-columns: 70px 1fr;
 }
 
- #info{
+#info {
     margin-top: 20px;
 }
 
@@ -813,6 +812,7 @@ a {
         width: 100%;
     }
 }
+
 .profile-image {
     height: 50px;
     width: 50px;
@@ -826,22 +826,83 @@ a {
     border-radius: 50%;
 }
 
-.situation{
+.situation {
     display: grid;
     grid-template-columns: 100px 1fr;
 }
 
-.div1{
+.div1 {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 14px;
     margin: 0px 0px 0px 10px;
     color: red;
 }
-.div2{
+
+.div2 {
     height: 100px;
     display: flex;
     flex-direction: row-reverse;
     gap: 20px;
     margin: 5px 20px 0px 0px;
 }
+
+.how-client {
+    margin-top: 200px;
+    line-height: 5px;
+}
+
+@media(min-width: 1200px) and (max-width: 1400px) {
+    .how-client {
+        margin-top: 700px;
+    }
+}
+@media(min-width: 900px) and (max-width: 1200px) {
+    .how-client {
+        margin-top: 700px;
+    }
+}
+@media(min-width: 700px) and (max-width: 900px) {
+    .how-client {
+        margin-top: 2800px;
+    }
+}
+@media(min-width: 400px) and (max-width: 700px) {
+    .how-client {
+        margin-top: 2800px;
+    }
+}
+@media(min-width:200px) and (max-width: 400px) {
+    .how-client {
+        margin-top: 2800px;
+    }
+}
+
+
+
+.how-client h2,
+.how-client p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+.how-client h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.how-client p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 23px;
+}
+
+
