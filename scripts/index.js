@@ -28,3 +28,68 @@ window.addEventListener('scroll', function () {
     }
 });
 
+const wrapper = document.querySelector(".wrapper");
+const crousal = document.querySelector(".crousal");
+const arrowButtons = document.querySelectorAll(".wrapper i");
+const firstCardWidth = crousal.querySelector(".card").offsetWidth;
+const crousalChildren = [...crousal.children];
+
+let isDragging = false, startX, startScrollLeft, timeoutId;
+
+let cardPerView = Math.round(crousal.offsetWidth / firstCardWidth);
+
+crousalChildren.slice(-cardPerView).reverse().forEach(card => {
+    crousal.insertAdjacentHTML("afterbegin", card.outerHTML);
+});
+
+crousalChildren.slice(0, cardPerView).reverse().forEach(card => {
+    crousal.insertAdjacentHTML("beforeend", card.outerHTML);
+});
+
+arrowButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        crousal.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
+    })
+});
+
+const dragStart = (e) => {
+    isDragging = true;
+    crousal.classList.add("dragging");
+    startX = e.pageX;
+    startScrollLeft = crousal.scrollLeft;
+}
+const dragging = (e) => {
+    if (!isDragging) return;
+    crousal.scrollLeft = startScrollLeft - (e.pageX - startX);
+}
+
+const dragstop = () => {
+    isDragging = false;
+    crousal.classList.remove("dragging");
+}
+
+const autoPlay = () => {
+    if (window.innerWidth < 800) return;
+    timeoutId = setTimeout(() => crousal.scrollLeft += firstCardWidth, 2500)
+}
+autoPlay();
+const infiniteScroll = () => {
+    if (crousal.scrollLeft === 0) {
+        crousal.classList.add("no-transition");
+        crousal.scrollLeft = crousal.scrollWidth - (2 * crousal.offsetWidth);
+        crousal.classList.remove("no-transition");
+    } else if (Math.ceil(crousal.scrollLeft) === crousal.scrollWidth - crousal.offsetWidth) {
+        crousal.classList.add("no-transition");
+        crousal.scrollLeft = crousal.offsetWidth;
+        crousal.classList.remove("no-transition");
+    }
+    clearTimeout(timeoutId);
+    if (!wrapper.matches(":hover"))autoPlay(); 
+}
+
+crousal.addEventListener("mousedown", dragStart);
+crousal.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragstop);
+crousal.addEventListener("scroll", infiniteScroll);
+crousal.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+crousal.addEventListener("mouseleave", autoPlay);
