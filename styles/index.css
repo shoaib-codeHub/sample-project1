@@ -1024,6 +1024,14 @@ a {
     margin: 30px0px 5px;
 }
 
+.star{
+    height: 70px;
+    width: 150px;
+}
+.star img{
+    height: 100%;
+    width: 100%;
+}
 .card span {
     color: #9d8977;
     font-size: 0.7rem;
