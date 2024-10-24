@@ -97,3 +97,27 @@ document.addEventListener("mouseup", dragstop);
 crousal.addEventListener("scroll", infiniteScroll);
 crousal.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 crousal.addEventListener("mouseleave", autoPlay);
+
+
+function animateCount(id, start, end, duration) {
+    let range = end - start;
+    let stepTime = Math.abs(Math.floor(duration / range));
+    let element = document.getElementById(id);
+    let current = start;
+    let increment = end > start ? 1 : -1;
+    
+    let timer = setInterval(function() {
+        current += increment;
+        element.textContent = current + element.textContent.replace(/[\d]/g, '');
+        
+        if (current == end) {
+            clearInterval(timer);
+        }
+    }, stepTime);
+}
+
+// Set values and durations for each element
+animateCount("listings", 0, 90, 7000); // 90K listings
+animateCount("categories", 0, 40, 7000); // 40K Listings Categories
+animateCount("visitors", 0, 65, 7000); // 65K Visitors
+animateCount("clients", 0, 50, 7000); // 50K Happy Clients
