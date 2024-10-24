@@ -58,10 +58,14 @@ const dragStart = (e) => {
     startX = e.pageX;
     startScrollLeft = crousal.scrollLeft;
 }
+
 const dragging = (e) => {
     if (!isDragging) return;
-    crousal.scrollLeft = startScrollLeft - (e.pageX - startX);
-}
+    e.preventDefault(); // Prevent any default behavior during dragging
+    let positionDiff = e.pageX - startX; 
+    crousal.scrollLeft = startScrollLeft - positionDiff;
+};
+
 
 const dragstop = () => {
     isDragging = false;

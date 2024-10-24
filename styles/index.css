@@ -959,7 +959,7 @@ a {
     border-radius: 50%;
 }
 
-.card:hover{
+.card:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(62, 63, 74, 0.27);
 }
 
@@ -970,7 +970,10 @@ a {
     border-radius: 50%;
     border: 4px solid #fff;
 }
-
+.crousal{
+    scroll-behavior: smooth;
+    transition: scroll 0.5s ease-in-out;
+}
 .wrapper .crousal {
     display: grid;
     grid-auto-flow: column;
@@ -991,9 +994,11 @@ a {
     justify-content: center;
     align-items: center;
 }
-.crousal.no-transition{
+
+.crousal.no-transition {
     scroll-behavior: auto;
 }
+
 .crousal.dragging {
     scroll-snap-type: none;
     scroll-behavior: auto;
@@ -1024,14 +1029,16 @@ a {
     margin: 30px0px 5px;
 }
 
-.star{
+.star {
     height: 70px;
     width: 150px;
 }
-.star img{
+
+.star img {
     height: 100%;
     width: 100%;
 }
+
 .card span {
     color: #9d8977;
     font-size: 0.7rem;
@@ -1048,4 +1055,37 @@ a {
     .wrapper .crousal {
         grid-auto-columns: 100%;
     }
+}
+.review {
+    height: 500px;
+    width: 100%;
+    margin-top: 150px;
+    position: relative; /* Ensures elements are positioned inside .review */
+    display: flex;
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    overflow: hidden; /* Hide overflow from large images */
+}
+
+.review img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the div properly */
+    opacity: 0.3;
+    position: absolute; /* Keep the image in the background */
+    top: 0;
+    left: 0;
+}
+
+.review-content {
+    position: relative; /* Allows the content to be centered over the image */
+    z-index: 1; /* Ensures content appears over the image */
+    display: flex;
+    flex-direction: column; /* Stack the text vertically */
+    justify-content: center;
+    align-items: center;
+    color: #000; /* Adjust text color */
+    font-size: 24px; /* Adjust text size */
+    font-weight: bold;
+    text-align: center;
 }
