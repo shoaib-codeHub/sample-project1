@@ -1208,3 +1208,22 @@ a {
     margin: 20px 0px 0px 10px;
     font-size: 1rem;
 }
+
+.last-section{
+    margin-top: 100px;
+    line-height: 30px;
+    text-align: center;
+}
+
+@media (max-width: 1340px) {
+    .last-section {
+        position: relative;
+        top: 600px;
+    }
+}
+@media (max-width: 900px) {
+    .last-section {
+        position: relative;
+        top: 1200px;
+    }
+}
