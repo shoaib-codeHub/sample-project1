@@ -9,6 +9,7 @@
     font-family: "poppins", sans-serif;
 }
 
+
 /* Header */
 header {
     background-color: #b2a496;
@@ -1225,5 +1226,62 @@ a {
     .last-section {
         position: relative;
         top: 1200px;
+    }
+}
+
+.account{
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account #mail{
+    border: 1px solid rgba(128, 128, 128, 0.299);
+    height: 70px;
+    width: 500px;
+    margin: 0px;
+}
+.account #submit{
+    border: 1px solid rgba(128, 128, 128, 0.299);
+    height: 70px;
+    width: 150px;
+    font-size: 17px;
+    margin: 0px;
+    background-color: rgba(255, 0, 0, 0.774);
+    color: wheat;
+}
+
+
+.account input{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: #b2a49621;
+}
+.account input:focus{
+    border: none;
+    outline: none;
+}
+ .form:hover{
+    transition: all ease-in-out 0.5s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(62, 63, 74, 0.27);
+}
+
+@media (max-width: 1340px) {
+    .account {
+        position: relative;
+        top: 600px;
+    }
+}
+@media (max-width: 970px) {
+    .account {
+        position: relative;
+        top: 1300px;
+    }
+
+    .account #mail{
+        width: 250px;
     }
 }
