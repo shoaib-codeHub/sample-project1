@@ -22,4 +22,4 @@ This project is a landing page for a platform where users can explore and find t
 1. **Clone the Repository**  
    Clone the project to your local machine using:
    ```bash
-  https://github.com/123-sho/sample-project.git
+   git clone https://github.com/123-sho/sample-project.git
