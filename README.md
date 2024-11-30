@@ -10,7 +10,7 @@ Features
  * Mobile-Friendly Design: Access ListRace on your smartphone or tablet.
 Getting Started
  * Clone the Repository:
-   git clone https://github.com/your-username/ListRace.git
+   git clone https://github.com/shoaib-codeHub
 
  * Install Dependencies:
    cd ListRace
